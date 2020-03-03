@@ -2,18 +2,13 @@ var inputTask = document.getElementById("input-task");
 var inputTeamMember = document.getElementById("input-member");
 var buttonInsert = document.getElementById("button-insert");
 var lsOutput = document.getElementById("ls-output");
-var obj = {};
-obj.task = new Array();
-obj.teamMember = new Array();
 
 buttonInsert.onclick = function(){
     var inputTaskValue = inputTask.value;
     var inputTeamMemberValue = inputTeamMember.value;
-    var taskSerialized = JSON.stringify(inputTaskValue);
-    var taskPush = obj.task.push(taskSerialized);
-    
+        
     if (inputTaskValue){
-    localStorage.setItem("Gjøremål", taskPush)
+    localStorage.setItem("Gjøremål", inputTaskValue)
     }
     if (inputTeamMemberValue){
     localStorage.setItem("Team-medlem", inputTeamMemberValue);
