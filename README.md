@@ -1,9 +1,11 @@
-"# pro104-assignment-Heltkake" 
+# GRUPPE 27
 
+
+## Deltakelse
 Gruppemedlemmer som har deltatt i prosjektet:
-  Christian Arntsen
-  Tomas Gustavsen
-  Renate Karlsen
-  Zander Kneppen
-  Vibeke Opgård
-  Mathias Skogen
+  * Christian Arntsen
+  * Tomas Gustavsen
+  * Renate Karlsen
+  * Zander Kneppen
+  * Vibeke Opgård
+  * Mathias Skogen
