@@ -1,116 +1,65 @@
-
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>adminPage</title>
-</head>
-<body>
+  </head>
+  <body>
+    <!-- ADMIN PAGE -->
+    <!-- ADMIN PAGE -->
+    <!-- ADMIN PAGE -->
     <h3>Type in an exercise and teammember of your choice</h3>
     <form onsubmit="submitBtn()">
-        <input type="text" id="input1">
-        <input type="text" id="input2">
-        <button>submit</button>
-        <div id="div"></div>
-            </form>
-
+      <input type="text" id="input1" />
+      <input type="text" id="input2" />
+      <button>submit</button>
+      <div id="div"></div>
+    </form>
 
     <script>
-                  
-        const toLocalS = JSON.parse(window.localStorage.getItem("objects")) || [];
+      //henter ut fra local storage (key objects), hvis det ikke er noe der så henter den fra array
+      const toLocalS = JSON.parse(window.localStorage.getItem("objects")) || [];
 
+      function submitBtn() {
+        const input = document.querySelector("#input1").value;
+        const input2 = document.querySelector("#input2").value;
 
-        function submitBtn(){
+        // lager om input som blir skrevet inn av bruker til et objekt
+        const myObj = {
+          exercise: input,
+          teamMember: input2
+        };
 
-            const input = document.querySelector("#input1").value;    
-            const input2 = document.querySelector("#input2").value;
+        //pusher input til toLocalS array
+        toLocalS.push(myObj);
+        window.localStorage.setItem("objects", JSON.stringify(toLocalS));
 
-            const myObj = {
-                exercise: input,
-                teamMember: input2,
-            };
+        console.log(myObj);
 
-            toLocalS.push(myObj);
-            window.localStorage.setItem("objects", JSON.stringify(toLocalS));
+        // funksjon rett under
+        listingFromLocalS();
+      }
 
-            
-            console.log(myObj);
-            
-            
-            listingFromLocalS();
+      function listingFromLocalS() {
+        const fromLocalS = window.localStorage.getItem("objects");
+
+        //om local storage er tomt så henter vi ut fra array
+        let toLocalS = JSON.stringify(fromLocalS);
+        if (toLocalS === null) {
+          toLocalS = [];
         }
-<<<<<<< HEAD
 
-            
-            function listingFromLocalS(){
-            const fromLocalS = window.localStorage.getItem("objects");
-                
-            let toLocalS = JSON.stringify(fromLocalS);
-            if (toLocalS === null){
-                toLocalS = [];
-            }
+        //henter inn div fra DOM
+        const div = document.getElementById("div");
+      }
 
-            const div = document.getElementById("div");
-
-=======
-        
-    fieldset {
-        margin-bottom: 20px;
-    }
-
-        
-</style>
-      
-</head>
-  
-    
-    <body>
-
-    <p> HELLOOOOOOOO!! </p>
-    <h1> VIBEKE FÅR TIL! </h1>
-
-    <p>lksdlksd</p>
-    
-    <p>heisann</p>
-        
-    <h1>Hei jeg har corona!</h1>
-
-
-
-      <h2 id="title">Local Storage Test</h2>
-      
-    <fieldset>
-        <legend>Insert Data</legend>
-        <input id="input-task" type="text" placeholder="Legg til arbeidsoppgave">
-        <input id="input-member" type="text" placeholder="Opprett teammedlem">
-        <button type="button" id="button-insert">Insert Data</button>
-    </fieldset> 
-      
-    
-    <fieldset>
-        <legend>Local Storage</legend>
-        <div id="ls-output"></div>
-    </fieldset>
-      
->>>>>>> 7f3a6f1b67dd83244ee323ec8fc91b49cbe8216f
-      
-            }
-
-            for (let i = 0; i < toLocalS.length; i++) {
-                const div = document.getElementById('div');
-                div.innerHTML += `<br><div>arbeidsoppgave:<br>${toLocalS[i].exercise}</div>
-                                  <br><div>teammedlem:<br>${toLocalS[i].teamMember}</div>`; 
-            }
-            
-            function test(){
-                alert("test");
-            }
-
-
-
-
-
+      //henter ut fra array
+      for (let i = 0; i < toLocalS.length; i++) {
+        const div = document.getElementById("div");
+        div.innerHTML += `<br><div>arbeidsoppgave:<br>${toLocalS[i].exercise}</div>
+                                  <br><div>teammedlem:<br>${toLocalS[i].teamMember}</div>`;
+      }
     </script>
-</body>
+  </body>
 </html>
