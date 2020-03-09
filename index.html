@@ -1,43 +1,74 @@
+
 <!DOCTYPE html>
-<html>
-  <head>
+<html lang="en">
+<head>
     <meta charset="UTF-8">
-    <title>title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>adminPage</title>
+</head>
+<body>
+    <h3>Type in an exercise and teammember of your choice</h3>
+    <form onsubmit="submitBtn()">
+        <input type="text" id="input1">
+        <input type="text" id="input2">
+        <button>submit</button>
+        <div id="div"></div>
+            </form>
+
+
+    <script>
+                  
+        const toLocalS = JSON.parse(window.localStorage.getItem("objects")) || [];
+
+
+        function submitBtn(){
+
+            const input = document.querySelector("#input1").value;    
+            const input2 = document.querySelector("#input2").value;
+
+            const myObj = {
+                exercise: input,
+                teamMember: input2,
+            };
+
+            toLocalS.push(myObj);
+            window.localStorage.setItem("objects", JSON.stringify(toLocalS));
+
+            
+            console.log(myObj);
+            
+            
+            listingFromLocalS();
+        }
+
+            
+            function listingFromLocalS(){
+            const fromLocalS = window.localStorage.getItem("objects");
+                
+            let toLocalS = JSON.stringify(fromLocalS);
+            if (toLocalS === null){
+                toLocalS = [];
+            }
+
+            const div = document.getElementById("div");
 
       
-<style media="screen">
-        
-    input, button{
-            padding: 7px;
-            height: 40px;
-        }
-        
-    fieldset {
-        margin-bottom: 20px;
-    }
-        
-</style>
-      
-</head>
-  
-    
-    <body>
-      <h2 id="title">Local Storage Test</h2>
-      
-    <fieldset>
-        <legend>Insert Data</legend>
-        <input id="input-task" type="text" placeholder="Legg til arbeidsoppgave">
-        <input id="input-member" type="text" placeholder="Opprett teammedlem">
-        <button type="button" id="button-insert">Insert Data</button>
-    </fieldset> 
-      
-    
-    <fieldset>
-        <legend>Local Storage</legend>
-        <div id="ls-output"></div>
-    </fieldset>
-      
-      
-      <script src="script.js"></script>
-  </body>
+            }
+
+            for (let i = 0; i < toLocalS.length; i++) {
+                const div = document.getElementById('div');
+                div.innerHTML += `<br><div>arbeidsoppgave:<br>${toLocalS[i].exercise}</div>
+                                  <br><div>teammedlem:<br>${toLocalS[i].teamMember}</div>`; 
+            }
+            
+            function test(){
+                alert("test");
+            }
+
+
+
+
+
+    </script>
+</body>
 </html>

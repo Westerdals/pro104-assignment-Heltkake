@@ -2,6 +2,7 @@ var inputTask = document.getElementById("input-task");
 var inputTeamMember = document.getElementById("input-member");
 var buttonInsert = document.getElementById("button-insert");
 var lsOutput = document.getElementById("ls-output");
+var lsButton = document.getElementById("ls-button");
 
 buttonInsert.onclick = function(){
     var inputTaskValue = inputTask.value;
@@ -16,6 +17,7 @@ buttonInsert.onclick = function(){
     location.reload();
     }
 
+lsButton.onclick = showTasks;
 
 function showTasks(){
 for (i=0; i < localStorage.length; i++){
