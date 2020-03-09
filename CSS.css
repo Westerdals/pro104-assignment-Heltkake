@@ -1,23 +1,22 @@
 /* CSS fil! woohooo */
-* {
-        padding: 0;
-        margin: 0;
-    }
 
-    body {
-        background-image: linear-gradient(grey, white);
-        background-size: cover;
-    }
+* {
+    margin: 0;
+    padding: 0;
+}
 
-    .main-container {
-        background-color: white;
-        border-radius: 50px;
-        border: solid 2px black;
-        margin-top: 100px;
-        margin-left: 200px;
-        margin-bottom: 200px;
-        padding: 50px;
-        position: relative;
-        height: 800px;
-        width: 1200px;
-    }
+body {
+    background-image: linear-gradient(grey, white);
+    background-size: cover;
+}
+
+.main-container {
+    width: 1200px;
+    background-color: white;
+    border: solid black 1,5px;
+    border-radius: 0px 50px;
+    padding: 50px;
+    position: relative;
+    margin-top: 100px;
+    margin-left: 200px;
+}
