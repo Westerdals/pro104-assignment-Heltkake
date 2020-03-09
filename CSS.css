@@ -14,10 +14,9 @@ body {
     margin-top: -100px;
     width: 950px;
     height: 280px;
-    background-color: rgba(1, 88, 104, 0.39);
+    background-color: rgba(1, 89, 104, 0.24);
     border-radius: 1px 1px 50px 1px;
     position: absolute;
-    z-index: 1;
 
 }
 
