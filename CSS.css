@@ -17,7 +17,6 @@ body {
     background-color: rgba(1, 89, 104, 0.24);
     border-radius: 1px 1px 50px 1px;
     position: absolute;
-
 }
 
 .main-container {
@@ -31,4 +30,13 @@ body {
     margin-top: 100px;
     margin-left: 100px;
     margin-bottom: 500px;
+}
+
+#btn-submit {
+    border-radius: 10px;
+    padding: 10px;
+    background-color: rgb(202, 202, 202);
+    font-size: 16px;
+    font-weight: bold;
+
 }
