@@ -4,55 +4,59 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>adminPage</title>
-    <link rel="stylesheet" type="text/css" href="CSS.css">
+    <link rel="stylesheet" type="text/css" href="CSS.css" />
   </head>
   <body>
     <!-- ADMIN PAGE -->
     <!-- ADMIN PAGE -->
     <!-- ADMIN PAGE -->
     <div class="main-container">
-    <h3>Type in an exercise and teammember of your choice</h3>
-    <form onsubmit="submitBtn()">
-      <input type="text" id="input1" />
-      <input type="text" id="input2" />
-      <button>submit</button>
-      <div id="div"></div>
-    </form>
-    </div> 
+      <h3>Type in an exercise and teammember of your choice</h3>
+      <form onsubmit="submitBtn()">
+        <div>tasks:</div>
+        <input type="text" id="input1" /><br /><br />
+        <div>members:</div>
+        <input type="text" id="input2" />
+        <button>submit</button>
+        <div id="div"></div>
+      </form>
+    </div>
 
     <script>
       //henter ut fra local storage (key objects), hvis det ikke er noe der så henter den fra array
-        const taskArray = JSON.parse(window.localStorage.getItem("Tasks")) || [];
-        const teamMemberArray = JSON.parse(window.localStorage.getItem("Teammembers")) || [];
-
+      const taskArray = JSON.parse(window.localStorage.getItem("Tasks")) || [];
+      const teamMemberArray =
+        JSON.parse(window.localStorage.getItem("Teammembers")) || [];
 
       function submitBtn() {
         const taskInput = document.querySelector("#input1").value;
         const teamMemberInput = document.querySelector("#input2").value;
 
         // lager om input som blir skrevet inn av bruker til et objekt
-        
 
         //pusher input til toLocalS array
         taskArray.push(taskInput);
         teamMemberArray.push(teamMemberInput);
         window.localStorage.setItem("Tasks", JSON.stringify(taskArray));
-        window.localStorage.setItem("Teammembers", JSON.stringify(teamMemberArray));
+        window.localStorage.setItem(
+          "Teammembers",
+          JSON.stringify(teamMemberArray)
+        );
 
         console.log(taskArray);
 
-        // funksjon rett under
+        // funksjonen rett under
         listingFromLocalS();
       }
 
       function listingFromLocalS() {
-        const taskArray = window.localStorage.getItem("Tasks");
-        const teamMemberArray = window.localStorage.getItem("Teammembers");
+        const taskArray2 = window.localStorage.getItem("Tasks");
+        const teamMemberArray2 = window.localStorage.getItem("Teammembers");
 
         //om local storage er tomt så henter vi ut fra array
-        let taskArray = JSON.stringify(fromLocalS);
-        if (toLocalS === null) {
-          toLocalS = [];
+        let taskArray = JSON.stringify(taskArray2);
+        if (taskArray === null) {
+          taskArray = [];
         }
 
         //henter inn div fra DOM
@@ -60,11 +64,16 @@
       }
 
       //henter ut fra array
-      for (let i = 0; i < toLocalS.length; i++) {
+      for (let i = 0; i < taskArray.length; i++) {
         const div = document.getElementById("div");
-        div.innerHTML += `<br><div>arbeidsoppgave:<br>${toLocalS[i].exercise}</div>
-                                  <br><div>teammedlem:<br>${toLocalS[i].teamMember}</div>`;
+        div.innerHTML += `<br><div>teammembers:<br>${taskArray[i]}</div>`;
       }
+      /*
+      for (let i = 0; i < teamMemberArray.length; i++) {
+        const div = document.getElementById("div");
+        div.innerHTML += `<br><div>teammembers:<br>${teamMemberArray[i]}</div>`;
+      }
+      */
     </script>
   </body>
 </html>
