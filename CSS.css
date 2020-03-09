@@ -10,13 +10,26 @@ body {
     background-size: cover;
 }
 
+#top-box {
+    margin-top: -100px;
+    width: 950px;
+    height: 280px;
+    background-color: rgba(1, 88, 104, 0.39);
+    border-radius: 1px 1px 50px 1px;
+    position: absolute;
+    z-index: 1;
+
+}
+
 .main-container {
     width: 1000px;
     background-color: white;
     border: solid black 1,5px;
+    box-shadow: lightslategrey;
     border-radius: 0px 50px;
     padding: 50px;
     position: relative;
     margin-top: 100px;
     margin-left: 100px;
+    margin-bottom: 500px;
 }
