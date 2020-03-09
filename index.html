@@ -59,6 +59,12 @@
           taskArray = [];
         }
 
+        //om local storage er tomt så henter vi ut fra array #2
+        let teamMemberArray = JSON.stringify(teamMemberArray2);
+        if (teamMemberArray === null) {
+          teamMemberArray = [];
+        }
+
         //henter inn div fra DOM
         const div = document.getElementById("div");
       }
@@ -68,12 +74,11 @@
         const div = document.getElementById("div");
         div.innerHTML += `<br><div>teammembers:<br>${taskArray[i]}</div>`;
       }
-      /*
+
       for (let i = 0; i < teamMemberArray.length; i++) {
         const div = document.getElementById("div");
         div.innerHTML += `<br><div>teammembers:<br>${teamMemberArray[i]}</div>`;
       }
-      */
     </script>
   </body>
 </html>
