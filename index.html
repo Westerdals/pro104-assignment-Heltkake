@@ -13,15 +13,20 @@
     <div id="top-box"></div>
     <div class="main-container">
       <h3>Type in an exercise and teammember of your choice</h3>
-      <form onsubmit="submitBtn()">
+      <form onsubmit="submitBtn1()">
         <div>tasks:</div>
-        <input type="text" id="input1" /><br /><br />
-        <div>members:</div>
-        <input type="text" id="input2" />
+        <input type="text" id="input1" />
+        <ul id="ul1"></ul>
         <button>submit</button>
-        <div id="div"></div>
+        </form>
+        <form onsubmit="submitBtn2()">
+        <div>Team members:</div>
+        <input type="text" id="input2" />
+        <ul id="ul2"></ul>
+        <button>submit</button>
       </form>
-    </div>
+    
+      </div>
 
     <script>
       //henter ut fra local storage (key objects), hvis det ikke er noe der så henter den fra array
@@ -29,23 +34,31 @@
       const teamMemberArray =
         JSON.parse(window.localStorage.getItem("Teammembers")) || [];
 
-      function submitBtn() {
+      function submitBtn1() {
         const taskInput = document.querySelector("#input1").value;
-        const teamMemberInput = document.querySelector("#input2").value;
+        
 
         // lager om input som blir skrevet inn av bruker til et objekt
 
         //pusher input til toLocalS array
         taskArray.push(taskInput);
-        teamMemberArray.push(teamMemberInput);
+        
         window.localStorage.setItem("Tasks", JSON.stringify(taskArray));
-        window.localStorage.setItem(
-          "Teammembers",
-          JSON.stringify(teamMemberArray)
-        );
 
-        console.log(taskArray);
 
+        // funksjonen rett under
+        listingFromLocalS();
+      }
+    
+        
+    function submitBtn2() {
+        const teamMemberInput = document.querySelector("#input2").value;
+
+        // lager om input som blir skrevet inn av bruker til et objekt
+
+        //pusher input til array
+        teamMemberArray.push(teamMemberInput);
+        window.localStorage.setItem("Teammembers", JSON.stringify(teamMemberArray));
         // funksjonen rett under
         listingFromLocalS();
       }
@@ -65,20 +78,21 @@
         if (teamMemberArray === null) {
           teamMemberArray = [];
         }
-
-        //henter inn div fra DOM
-        const div = document.getElementById("div");
       }
 
       //henter ut fra array
       for (let i = 0; i < taskArray.length; i++) {
-        const div = document.getElementById("div");
-        div.innerHTML += `<br><div>teammembers:<br>${taskArray[i]}</div>`;
+        var ul = document.getElementById("ul1");
+        var li = document.createElement("li");
+        li.appendChild(document.createTextNode(`${taskArray[i]}`));
+        ul.appendChild(li);
       }
 
       for (let i = 0; i < teamMemberArray.length; i++) {
-        const div = document.getElementById("div");
-        div.innerHTML += `<br><div>teammembers:<br>${teamMemberArray[i]}</div>`;
+        var ul2 = document.getElementById("ul2");
+        var li2 = document.createElement("li");
+        li2.appendChild(document.createTextNode(`${teamMemberArray[i]}`));
+        ul2.appendChild(li2);
       }
     </script>
   </body>
