@@ -12,26 +12,24 @@ body {
 
 #top-box {
     margin-top: -100px;
-    width: 950px;
-    height: 280px;
-    background-color: rgba(1, 89, 104, 0.24);
+    width: 750px;
+    height: 320px;
+    background-color: rgb(1, 89, 104);
     border-radius: 1px 1px 50px 1px;
     position: absolute;
 }
 
 .main-container {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
     grid-gap: 10px;
-
     width: 1000px;
-    background-color: white;
+    background-color: rgba(250, 250, 250, 0.397);
     border: solid black 1,5px;
     box-shadow: lightslategrey;
     border-radius: 0px 50px;
     padding: 50px;
     position: relative;
-    margin-top: 100px;
+    margin-top: 80px;
     margin-left: 100px;
     margin-bottom: 500px;
 }
