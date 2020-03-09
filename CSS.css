@@ -11,12 +11,12 @@ body {
 }
 
 .main-container {
-    width: 1200px;
+    width: 1000px;
     background-color: white;
     border: solid black 1,5px;
     border-radius: 0px 50px;
     padding: 50px;
     position: relative;
     margin-top: 100px;
-    margin-left: 200px;
+    margin-left: 100px;
 }
