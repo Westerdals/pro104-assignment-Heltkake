@@ -8,31 +8,18 @@ body {
     background-color: rgb(73, 73, 73);
 }
 
-.main-container {
+main {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-gap: 10px;
     grid-auto-rows: minmax(auto, 100px);
-    height: 1500px;
-    width: 1000px;
-    background-image: linear-gradient(darkgrey, white);
-    border: solid white 1px;
-    border-radius: 0px 50px;
-    padding: 50px;
-    position: relative;
-    margin-top: 80px;
-    margin-left: 100px;
-    margin-bottom: 500px;
 }
 
 h3 {
     background-color: white;
     height: 50px;
     padding: 20px;
-    border-radius: 20px;
     font-size: 30px;
-    grid-column: 1 / 4;
-    grid-row: 1;
 
 }
 
@@ -40,7 +27,7 @@ h3 {
     font-size: 25px;
     background-color: #505050;
     color: white;
-    grid-column: auto;
+    grid-column: 1;
     grid-row: 2;
     padding: 10px;
     border-radius: 20px;
@@ -50,7 +37,7 @@ h3 {
 #team {
     font-size: 25px;
     background-color: #797e7d;
-    grid-column: auto;
+    grid-column: 2;
     grid-row: 2;
     padding: 10px;
     border-radius: 20px;
@@ -60,7 +47,7 @@ h3 {
     background-color: #505050;
     color: white;
     padding: 30px;
-    grid-column: auto;
+    grid-column: 1;
     grid-row: 3;
     border-radius: 20px;
     height: 300px;
@@ -69,10 +56,20 @@ h3 {
 #ul2 {
     background-color: #797e7d;
     padding: 30px;
-    grid-column: auto;
+    grid-column: 2;
     grid-row: 3;
     border-radius: 20px;
 
+}
+
+#assign {
+    background-color: #505050;
+    color: white;
+    padding: 30px;
+    grid-column: 4 / 4;
+    grid-row: 2;
+    border-radius: 20px;
+    height: 300px;
 }
 
 .btn-submit {

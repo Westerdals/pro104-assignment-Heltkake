@@ -10,24 +10,27 @@
     <!-- ADMIN PAGE -->
     <!-- ADMIN PAGE -->
     <!-- ADMIN PAGE -->
-    <div id="top-box"></div>
-    <div class="main-container">
+    <header>
       <h3>Type in an exercise and teammember of your choice</h3>
-      <form onsubmit="submitBtn1()">
+    </header>
+
+    <main>
+      <form id="task" onsubmit="submitBtn1()">
         <div>Tasks:</div>
         <input type="text" id="input1" />
-        <ul id="ul1"></ul>
-        <button>Submit</button>
-        </form>
-        <form onsubmit="submitBtn2()">
+        <button class="btn-submit">Submit</button>
+      </form>
+
+      <form id="team" onsubmit="submitBtn2()">
         <div>Team members:</div>
         <input type="text" id="input2" />
-        <ul id="ul2"></ul>
-        <button>Submit</button>
+        <button class="btn-submit">Submit</button>
       </form>
-    
+
+      <ul id="ul1"></ul>
+      <ul id="ul2"></ul>
         
-    <form onsubmit="createNewAssignment()">
+    <form id="assign" onsubmit="createNewAssignment()">
         <select>
             <option id="assign-member"></option>
         </select>
@@ -37,6 +40,8 @@
         </select>
         <button> Assign! </button>   
     </form>
+
+  </main>
 
     <script>
       //henter ut fra local storage (key objects), hvis det ikke er noe der så henter den fra array
