@@ -10,27 +10,26 @@
     <!-- ADMIN PAGE -->
     <!-- ADMIN PAGE -->
     <!-- ADMIN PAGE -->
-    <div id="top-box"></div>
     <div class="main-container">
-    <div id="grid-1">
+
       <h3>Type in an exercise and teammember of your choice</h3>
-      <form onsubmit="submitBtn1()">
-        <div>tasks:</div>
+        
+    <form id="task" onsubmit="submitBtn1()">
+        <div>Tasks:</div>
         <input type="text" id="input1" />
-        <ul id="ul1"></ul>
         <button class="btn-submit">submit</button>
-        </form>
-    </div>
-    <div id="grid-2">
-        <form onsubmit="submitBtn2()">
+    </form>
+
+
+    <form id="team" onsubmit="submitBtn2()">
         <div>Team members:</div>
         <input type="text" id="input2" />
-        <ul id="ul2"></ul>
         <button class="btn-submit">submit</button>
-      </form>
-
-      </div>
-      </div>
+    </form>
+        
+         <ul id="ul1"></ul>
+         <ul id="ul2"></ul>
+    </div>
 
     <script>
       //henter ut fra local storage (key objects), hvis det ikke er noe der så henter den fra array
