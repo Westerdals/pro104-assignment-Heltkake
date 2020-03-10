@@ -11,32 +11,32 @@
     <!-- ADMIN PAGE -->
     <!-- ADMIN PAGE -->
     <img src="images/bakgrunn.jpg">
-    <div id="top-box"></div>
-    <div class="main-container">
+  <header>
       <h3>Type in an exercise and teammember of your choice</h3>
-      
-      <main>
-      <form id="task" onsubmit="submitBtn1()">
+  </header>
+
+  <main>
+    <form id="task" onsubmit="submitBtn1()">
         <div>Tasks:</div>
         <input type="text" id="input1" />
-        <ul id="ul1"></ul>
         <button class="btn-submit">Submit</button>
-        </form>
-        <form id="team" onsubmit="submitBtn2()">
+      </form>
+      <form id="team"  onsubmit="submitBtn2()">
         <div>Team members:</div>
         <input type="text" id="input2" />
-        <ul id="ul2"></ul>
         <button class="btn-submit">Submit</button>
       </form>
     
-        
+      <ul id="ul1"></ul>
+      <ul id="ul2"></ul>
+
     <form id="assign" onsubmit="createNewAssignment()" id="my-form" >
         <div>Member</div>
         <input type="text" id="assign-member">
         <br><br>
         <div>Task</div>
         <input type="text" id="assign-task">
-        <button>Assign!</button>  
+        <button class="btn-submit">Assign!</button>  
     </form>
     <div id="assignment-div"></div>
       </main>
