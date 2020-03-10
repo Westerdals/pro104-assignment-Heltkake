@@ -30,6 +30,10 @@ h3 {
     color: aliceblue;
     border: solid;
 }
+
+p {
+    color: white;
+}
 #task {
     font-size: 25px;
     background-color:darkslategrey;

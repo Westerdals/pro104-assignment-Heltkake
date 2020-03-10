@@ -14,32 +14,35 @@
     <div id="top-box"></div>
     <div class="main-container">
       <h3>Type in an exercise and teammember of your choice</h3>
-      <form onsubmit="submitBtn1()">
+      
+      <main>
+      <form id="task" onsubmit="submitBtn1()">
         <div>Tasks:</div>
         <input type="text" id="input1" />
         <ul id="ul1"></ul>
-        <button>Submit</button>
+        <button class="btn-submit">Submit</button>
         </form>
-        <form onsubmit="submitBtn2()">
+        <form id="team" onsubmit="submitBtn2()">
         <div>Team members:</div>
         <input type="text" id="input2" />
         <ul id="ul2"></ul>
-        <button>Submit</button>
+        <button class="btn-submit">Submit</button>
       </form>
     
         
-    <form onsubmit="createNewAssignment()" id="my-form" >
+    <form id="assign" onsubmit="createNewAssignment()" id="my-form" >
         <div>Member</div>
         <input type="text" id="assign-member">
         <br><br>
         <div>Task</div>
         <input type="text" id="assign-task">
-        <button> Assign! </button>   
+        <button>Assign!</button>  
     </form>
     <div id="assignment-div"></div>
+      </main>
     
     
-      </div>
+      
 
     <script>
       //henter ut fra local storage (key objects), hvis det ikke er noe der så henter den fra array
