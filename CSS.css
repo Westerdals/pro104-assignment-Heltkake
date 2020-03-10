@@ -5,8 +5,7 @@
 }
 
 body {
-    background-color: black;
-    background-size: cover;
+    background-color: rgb(73, 73, 73);
 }
 
 .main-container {
@@ -40,7 +39,8 @@ h3 {
 
 #task {
     font-size: 25px;
-    background-color: #2d61b5;
+    background-color: #004679;
+    color: white;
     grid-column: auto;
     grid-row: 2;
     padding: 10px;
@@ -50,7 +50,7 @@ h3 {
 
 #team {
     font-size: 25px;
-    background-color: #00e0ac;
+    background-color: #61f8e1;
     grid-column: auto;
     grid-row: 2;
     padding: 10px;
@@ -58,7 +58,8 @@ h3 {
 }
 
 #ul1 {
-    background-color: #17afff;
+    background-color: #007295;
+    color: white;
     padding: 30px;
     grid-column: auto;
     grid-row: 3;
@@ -67,7 +68,7 @@ h3 {
 
 }
 #ul2 {
-    background-color: #25a2a2;
+    background-color: #00baba;
     padding: 30px;
     grid-column: auto;
     grid-row: 3;
