@@ -33,6 +33,12 @@ h3 {
 
 p {
     color: white;
+    background-color: teal;
+    height: 50px;
+    width: 250px;;
+    grid-column: 3;
+    grid-row: 2;
+
 }
 #task {
     font-size: 25px;
@@ -74,12 +80,12 @@ p {
 #assign {
     background-color:darkslategrey;
     color: white;
-    padding: 30px;
+    padding: 10px;
     grid-column: 3;
     grid-row: 1;
     border-radius: 20px;
     height:auto;
-    width: 200px;
+    width: 300px;
 }
 .btn-submit {
     border-radius: 10px;
