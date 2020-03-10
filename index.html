@@ -28,8 +28,10 @@
     
         
     <form onsubmit="createNewAssignment()" id="my-form" >
+        <div>Member</div>
         <input type="text" id="assign-member">
         <br><br>
+        <div>Task</div>
         <input type="text" id="assign-task">
         <button> Assign! </button>   
     </form>
@@ -137,7 +139,7 @@
         for(var assigned of assignList){
                 var assignDiv = document.createElement("div");
                 var {assignTaskValue, assignMemberValue} = assigned;
-                assignDiv.innerHTML += `<p>${assignMemberValue}: ${assignTaskValue} </p>`;
+                assignDiv.innerHTML += `<p><strong>TASK:</strong> ${assignTaskValue} <br> <strong>ASSIGNED TO:</strong> ${assignMemberValue}</p> <br>`;
                 assignListDiv.appendChild(assignDiv);
             }
         
