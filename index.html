@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -10,32 +10,41 @@
     <!-- ADMIN PAGE -->
     <!-- ADMIN PAGE -->
     <!-- ADMIN PAGE -->
+    <div id="top-box"></div>
     <div class="main-container">
-
       <h3>Type in an exercise and teammember of your choice</h3>
-        
-    <form id="task" onsubmit="submitBtn1()">
+      <form onsubmit="submitBtn1()">
         <div>Tasks:</div>
         <input type="text" id="input1" />
-        <button class="btn-submit">submit</button>
-    </form>
-
-
-    <form id="team" onsubmit="submitBtn2()">
+        <ul id="ul1"></ul>
+        <button>Submit</button>
+        </form>
+        <form onsubmit="submitBtn2()">
         <div>Team members:</div>
         <input type="text" id="input2" />
-        <button class="btn-submit">submit</button>
-    </form>
+        <ul id="ul2"></ul>
+        <button>Submit</button>
+      </form>
+    
         
-         <ul id="ul1"></ul>
-         <ul id="ul2"></ul>
-    </div>
+    <form onsubmit="createNewAssignment()" id="my-form" >
+        <input type="text" id="assign-member">
+        <br><br>
+        <input type="text" id="assign-task">
+        <button> Assign! </button>   
+    </form>
+    <div id="assignment-div"></div>
+    
+    
+      </div>
 
     <script>
       //henter ut fra local storage (key objects), hvis det ikke er noe der så henter den fra array
-      const taskArray = JSON.parse(window.localStorage.getItem("Tasks")) || [];
-      const teamMemberArray =
+        const taskArray = JSON.parse(window.localStorage.getItem("Tasks")) || [];
+        const teamMemberArray =
         JSON.parse(window.localStorage.getItem("Teammembers")) || [];
+        
+        var myForm = document.getElementById("my-form");
 
       function submitBtn1() {
         const taskInput = document.querySelector("#input1").value;
@@ -64,6 +73,7 @@
         window.localStorage.setItem("Teammembers", JSON.stringify(teamMemberArray));
         // funksjonen rett under
         listingFromLocalS();
+        
       }
 
       function listingFromLocalS() {
@@ -82,7 +92,7 @@
           teamMemberArray = [];
         }
       }
-
+        
       //henter ut fra array
       for (let i = 0; i < taskArray.length; i++) {
         var ul = document.getElementById("ul1");
@@ -90,13 +100,51 @@
         li.appendChild(document.createTextNode(`${taskArray[i]}`));
         ul.appendChild(li);
       }
-
+        
       for (let i = 0; i < teamMemberArray.length; i++) {
         var ul2 = document.getElementById("ul2");
         var li2 = document.createElement("li");
         li2.appendChild(document.createTextNode(`${teamMemberArray[i]}`));
         ul2.appendChild(li2);
       }
+        
+    
+        
+        function createNewAssignment(){
+            // Hente inputen som blir skrevet i tekstboksene.
+            var assignTaskValue = document.querySelector("#assign-task").value;
+            var assignMemberValue = document.querySelector("#assign-member").value;
+            
+            // Tvinge bruker til å skrive i begge bokser.
+            if(assignTaskValue === "" || assignMemberValue === ""){
+                alert("You need to assign both a member and a task!")
+            }else{
+            
+            // Lager et objekt av inputen vi har hentet, og lager et array.
+            var assigned = {assignTaskValue, assignMemberValue};
+            var assignList = JSON.parse(window.localStorage.getItem("assignList")) || [];
+            
+            // Pusher inputen inn i arrayet, og lagrer det i local storage.
+            assignList.push(assigned);
+            window.localStorage.setItem("assignList", JSON.stringify(assignList));
+            
+            }
+            
+        }
+        
+        var assignListDiv = document.getElementById("assignment-div");
+        var assignList = JSON.parse(window.localStorage.getItem("assignList")) || [];
+        for(var assigned of assignList){
+                var assignDiv = document.createElement("div");
+                var {assignTaskValue, assignMemberValue} = assigned;
+                assignDiv.innerHTML += `<p>${assignMemberValue}: ${assignTaskValue} </p>`;
+                assignListDiv.appendChild(assignDiv);
+            }
+        
+        
+    
     </script>
+    
+    
   </body>
 </html>
