@@ -17,7 +17,6 @@ body {
     width: 1000px;
     background-image: linear-gradient(darkgrey, white);
     border: solid white 1px;
-    box-shadow: black;
     border-radius: 0px 50px;
     padding: 50px;
     position: relative;
@@ -39,7 +38,7 @@ h3 {
 
 #task {
     font-size: 25px;
-    background-color: #004679;
+    background-color: #505050;
     color: white;
     grid-column: auto;
     grid-row: 2;
@@ -50,15 +49,15 @@ h3 {
 
 #team {
     font-size: 25px;
-    background-color: #61f8e1;
+    background-color: #797e7d;
     grid-column: auto;
     grid-row: 2;
     padding: 10px;
-        border-radius: 20px;
+    border-radius: 20px;
 }
 
 #ul1 {
-    background-color: #007295;
+    background-color: #505050;
     color: white;
     padding: 30px;
     grid-column: auto;
@@ -68,7 +67,7 @@ h3 {
 
 }
 #ul2 {
-    background-color: #00baba;
+    background-color: #797e7d;
     padding: 30px;
     grid-column: auto;
     grid-row: 3;
